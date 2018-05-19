@@ -34,5 +34,5 @@
     "sass": "*",
     "semantic-ui-calendar": "0.0.8",
     "sequelize": "^4.37.7"
-  }
+   }
 }
