@@ -69,18 +69,18 @@ $(document).ready(function () {
 $(".addfav").on("click", function (event) {
   event.preventDefault();
   //if user isnt logged in, display an alert
-  var saleID=$(this).val();
+  var saleID = $(this).val();
   var favData = {
-      sale_id:saleID,
-      UserId: req.session.user.id
+    sale_id: saleID,
+    UserId: req.session.user.id
 
   };
   console.log(newSale);
 
   $.ajax("/api/addfav", {
-      type: "POST",
-      data: favData
+    type: "POST",
+    data: favData
   }).then(function () {
-      console.log("Added new sale: " + newSale);
+    console.log("Added new sale: " + newSale);
   });
 });
