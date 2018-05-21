@@ -55,10 +55,10 @@ app.use(session({
     saveUninitialized: true,
     cookieName: "session",
     cookie: {
-        path    : '/',
+        path: '/',
         httpOnly: true,
-        maxAge  : 24*60*60*1000
-      },
+        maxAge: 24 * 60 * 60 * 1000
+    },
     duration: 30 * 60 * 1000,
     activeDuration: 5 * 60 * 1000,
     httpOnly: true,

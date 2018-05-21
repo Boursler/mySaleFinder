@@ -1,4 +1,3 @@
-{{!-- Google maps API --}}
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW5Lqqx7a84oy9vgiTC4ueDHU7ecjLCLw&callback=getPos"
   type="text/javascript"></script>
 <script src="../public/js/buy.js"></script>
@@ -19,9 +18,9 @@
           <div class="content">
             <div class="header color-white">{{title}}</div>
             <div class="description">
-                <img src="https://www.hope2all.org/wp-content/uploads/2017/09/YardSale-1.gif"  width="100px" alt="yard sale">
-                {{!-- <span>{{formatTime start_time "hh:mm"}} - {{formatTime end_time "hh:mm"}}</span> --}}
-                <p class="color-white">{{items_desc}}</p>
+              <img src="https://www.hope2all.org/wp-content/uploads/2017/09/YardSale-1.gif" width="100px" alt="yard sale"> {{!--
+              <span>{{formatTime start_time "hh:mm"}} - {{formatTime end_time "hh:mm"}}</span> --}}
+              <p class="color-white">{{items_desc}}</p>
             </div>
           </div>
           <div class="extra content">
@@ -30,9 +29,7 @@
               Favorite
             </span>
             <span class="left floated color-white">{{formatDate start_date "MMM Do"}} - {{formatDate end_date "MMM Do"}}</span>
-            {{!-- {{#if sale.weather_cancel}} 
-            
-            {{else}}
+            {{!-- {{#if sale.weather_cancel}} {{else}}
             <span class="left floated tint" data-id={{id}}>
               <i class="tint icon"></i>
               Open during rain
