@@ -14,12 +14,41 @@ $(document).ready(function () {
         event.preventDefault();
         location.href = "/manage";
     });
+    //1 is true
     $.ajax({
             url: url,
             method: "GET"
         })
         .then(function (editData) {
+            var d = editData.sale;
             console.log(editData);
+            $('#title').val(d.title);
+            $('#sale_type').val(d.sale_type);
+            $('#rangestart').val(d.start_date);
+            $('#rangeend').val(d.end_date);
+            $('#startTime').val(d.start_time);
+            $('#endTime').val(d.end_time);
+            if (d.on_street_parking === "1") {
+                $('#parking').val('Yes');
+            } else {
+                $('#parking').val('No');
+            }
+            if (d.inside_outside === "1") {
+                $('#inside_outside').val('Yes');
+            } else {
+                $('#inside_outside').val('No');
+            }
+            if (d.weather_cancel === "1") {
+                $('#weather_cancel').val('Yes');
+            } else {
+                $('#weather_cancel').val('No');
+            }
+            $('#address').val(address);
+            $('#desc').val(d.items_desc);
+            $('#city').val(d.city);
+            $('#state').val(d.state);
+            $('#zip').val(d.zip_cd);
+
         });
 
 
@@ -46,6 +75,7 @@ $(document).ready(function () {
             state: $("#state").val().trim(),
             zip_cd: $("#zip").val().trim(),
             full_address: fullAddress,
+            address: $("#address").val().trim(),
             active: 1,
         };
         console.log(newSale);
