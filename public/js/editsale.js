@@ -24,26 +24,26 @@ $(document).ready(function () {
             console.log(editData);
             $('#title').val(d.title);
             $('#sale_type').val(d.sale_type);
-            $('#rangestart').val(d.start_date);
-            $('#rangeend').val(d.end_date);
-            $('#startTime').val(d.start_time);
-            $('#endTime').val(d.end_time);
+            $('#rangestart').attr('placeholder', d.start_date);
+            $('#rangeend').attr('placeholder', d.end_date);
+            $('#startTime').attr('placeholder', d.start_time);
+            $('#endTime').attr('placeholder', d.end_time);
             if (d.on_street_parking === "1") {
-                $('#parking').val('Yes');
+                $('#parking option:selected').text('Yes');
             } else {
-                $('#parking').val('No');
+                $('#parking option:selected').text('No');
             }
             if (d.inside_outside === "1") {
-                $('#inside_outside').val('Yes');
+                $('#inside_outside option:selected').text('Yes');
             } else {
-                $('#inside_outside').val('No');
+                $('#inside_outside option:selected').text('No');
             }
             if (d.weather_cancel === "1") {
-                $('#weather_cancel').val('Yes');
+                $('#weather_cancel option:selected').text('Yes');
             } else {
-                $('#weather_cancel').val('No');
+                $('#weather_cancel option:selected').text('No');
             }
-            $('#address').val(address);
+            $('#address').val(d.address);
             $('#desc').val(d.items_desc);
             $('#city').val(d.city);
             $('#state').val(d.state);
