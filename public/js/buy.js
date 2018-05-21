@@ -1,4 +1,5 @@
 var map;
+var markers = [];
 function getPos() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -57,13 +58,14 @@ function drawMarkers() {
         $("li").css({"border-left": "none"});
         $(".card").attr("style", "margin-left: 6px!important");
       });
+      markers.push(marker);
     }
+    console.log(markers);
   });
 }
 
 $(document).ready(function () {
   //Create new map and go to users position
-  getPos();
   for (var i = 0; i < $(".image").length; i++) {
     $(".image").each(function() {
       $(this).css({"background-image": "url('../public/img/sale" + Math.floor(Math.random() * 7 + 1) + ".PNG')"})
@@ -78,7 +80,6 @@ $(document).ready(function () {
     var favData = {
       saleId: saleID,
       //UserId: req.session.user.id
-
     };
     console.log(favData);
 
@@ -90,6 +91,10 @@ $(document).ready(function () {
       console.log("Added new sale: " + favData);
     });
   });  
+
+  $(document).on("click", "li", function() {
+    google.maps.event.trigger(markers[$(this).attr("id") - 1], "click");
+  })
 });
 
 
